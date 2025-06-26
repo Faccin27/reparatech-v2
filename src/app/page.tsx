@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import Services from "@/components/services";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       
       {/* <Header /> */}
       <Hero />
+      <Services />
     </div>
   );
 }
