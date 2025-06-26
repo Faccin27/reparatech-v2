@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import Products from "@/components/products";
 import Services from "@/components/services";
 import Image from "next/image";
 
@@ -11,8 +12,9 @@ export default function Home() {
       <div className="fixed bottom-0 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
       
       {/* <Header /> */}
-      <Hero />
+      <Hero /> 
       <Services />
+      <Products />
     </div>
   );
 }
