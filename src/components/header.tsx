@@ -1,21 +1,30 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ShoppingBag, User, Wallet, Menu, X, LogIn, Settings, LogOut } from "lucide-react"
-import { useState } from "react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  ShoppingBag,
+  User,
+  Wallet,
+  Menu,
+  X,
+  LogIn,
+  Settings,
+  LogOut,
+  Mail,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Variável para simular login: 0 = não logado, 1 = logado
-  const isLoggedIn = 1 // Mude para 0 ou 1 para testar
+  const isLoggedIn = 1; // Mude para 0 ou 1 para testar
 
-  const [userBalance] = useState(247.5)
-  const [cartItems] = useState(2)
-  const [userName] = useState("João Silva")
-  const [userMail] = useState("Jhondoe@email.com")
-
+  const [userBalance] = useState(247.5);
+  const [cartItems] = useState(2);
+  const [userName] = useState("João Silva");
+  const [userMail] = useState("Jhondoe@email.com");
 
   const navigationItems = [
     { name: "Início", href: "#inicio" },
@@ -23,10 +32,10 @@ export default function Header() {
     { name: "Loja", href: "#produtos" },
     { name: "Sobre", href: "#sobre" },
     { name: "Contato", href: "#contato" },
-  ]
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-zinc-950/98 backdrop-blur-xl border-b border-zinc-800/30">
+    <header className="sticky top-0 z-[100] w-full bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/30 supports-[backdrop-filter]:bg-zinc-950/60">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -52,13 +61,9 @@ export default function Header() {
 
           {/* User Area */}
           <div className="flex items-center space-x-3">
-            {/* Contact Button */}
-
             {isLoggedIn ? (
               /* Estado Logado */
               <>
-
-
                 {/* Carrinho */}
                 <Button
                   size="sm"
@@ -83,14 +88,18 @@ export default function Header() {
                     <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                       <User className="w-4 h-4 text-white" />
                     </div>
-                    <span className="hidden sm:inline font-medium">{userName.split(" ")[0]}</span>
+                    <span className="hidden sm:inline font-medium">
+                      {userName.split(" ")[0]}
+                    </span>
                   </Button>
 
                   {/* Dropdown */}
-                  <div className="absolute right-0 top-full mt-2 w-56 bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/50 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="absolute right-0 top-full mt-2 w-56 bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/50 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div className="p-3">
                       <div className="px-3 py-2 border-b border-zinc-700/50 mb-2">
-                        <p className="text-sm font-medium text-white">{userName}</p>
+                        <p className="text-sm font-medium text-white">
+                          {userName}
+                        </p>
                         <p className="text-xs text-zinc-400">{userMail}</p>
                       </div>
 
@@ -147,7 +156,11 @@ export default function Header() {
               className="lg:hidden text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition-all duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -173,8 +186,8 @@ export default function Header() {
                 <div className="px-4 py-3 bg-zinc-800/30 rounded-lg mx-4 mt-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-zinc-300">
-                      <Wallet className="w-4 h-4 text-emerald-400" />
-                      Saldo: R$ {userBalance.toFixed(2)}
+                      <Mail className="w-4 h-4 text-emerald-400" />
+                      {userMail}
                     </div>
                     <div className="flex items-center gap-2 text-sm text-zinc-300">
                       <ShoppingBag className="w-4 h-4" />
@@ -188,5 +201,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
