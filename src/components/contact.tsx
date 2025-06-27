@@ -1,6 +1,7 @@
-import { MapPin, Phone, Clock, MessageCircle, Mail, MailCheck } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, MailCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const contactInfo = [
@@ -80,7 +81,7 @@ const Contact = () => {
               size="lg"
               className="bg-green-500 hover:bg-blue-600 text-black font-semibold px-8 py-3 text-lg"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
+              <FaWhatsapp className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>
             <Button

@@ -29,7 +29,7 @@ const Products = () => {
   ];
 
   return (
-    <section id="produtos" className="py-20 px-4  relative z-10">
+    <section id="loja" className="py-20 px-4  relative z-10">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Loja Completa</h2>
@@ -96,7 +96,7 @@ const Products = () => {
             size="lg"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8"
           >
-            Consultar Disponibilidade
+            Nossos Produtos
           </Button>
         </div>
       </div>

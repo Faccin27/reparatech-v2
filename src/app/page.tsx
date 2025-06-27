@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 import Products from "@/components/products";
 import Services from "@/components/services";
 import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Products />
       <About />
       <Contact />
+      <Footer />
     </div>
   );
 }
