@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Products = () => {
   const productCategories = [
@@ -92,12 +93,14 @@ const Products = () => {
             </div>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8"
-          >
-            Nossos Produtos
-          </Button>
+          <Link href={"/comercial"}>
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+            >
+              Nossos Produtos
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
