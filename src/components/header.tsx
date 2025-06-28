@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   ShoppingBag,
   User,
-  Wallet,
   Menu,
   X,
   LogIn,
@@ -46,15 +45,14 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-zinc-300 hover:text-white transition-all duration-200 font-medium relative group py-2"
+                className="relative px-4 py-2 text-zinc-400 hover:text-blue-400 transition-colors duration-200 font-medium group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
           </nav>
@@ -173,7 +171,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 text-zinc-300 hover:text-white hover:bg-zinc-800/30 rounded-lg transition-all duration-200 font-medium"
+                  className="block px-4 py-3 text-zinc-300 hover:text-blue-400 hover:bg-zinc-800/30 rounded-lg transition-all duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
