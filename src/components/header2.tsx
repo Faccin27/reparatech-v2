@@ -11,7 +11,7 @@ export default function Header() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
   // Variável para simular login: 0 = não logado, 1 = logado
-  const isLoggedIn = 0 // Mudado para 0
+  const isLoggedIn = 1 // Mudado para 0
 
   const [userBalance] = useState(247.5)
   const [cartItems] = useState(2)
